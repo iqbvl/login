@@ -20,9 +20,13 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
 3. Use a rest tool or do curl:
     a. Login [POST] 
         curl : 
-        ```sh curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login ```
+
+        ```sh 
+        curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
+        ```
         Content-Type : application/json
         Body : 
+
         ```sh
         {
             "username" : "iqbvl",
@@ -33,6 +37,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     b. Register [POST]
         Content-Type : application/json
         Body : 
+    
         ```sh
         {
             "emailAddress": "iqbvlz@gmail.com",
@@ -44,6 +49,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     c. SendOTP [POST]
         Content-Type : application/json
         Body : 
+    
         ```sh
         {
             "otp" : 123456
@@ -53,6 +59,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     d. ForgotPassword [POST]
         Content-Type : application/json
         Body : 
+    
         ```sh
         {
             "emailAddress": "iqbvlz@gmail.com"
