@@ -7,12 +7,16 @@
 - Docker-compose
 
 # Maintainer
+
 Iqbal Abdurrahman at iqbal.jtk09@gmail.com
 
 # How to deploy
+
 1. Install Docker
+
 2. If you are on linux : 
     sudo docker-compose up --build --detach
+
 3. Use a rest tool or do curl:
     a. Login [POST] 
         curl : 
@@ -25,6 +29,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
             "password" : "iqbvl"
         }
         ```
+
     b. Register [POST]
         Content-Type : application/json
         Body : 
@@ -35,6 +40,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
             "password" : "iqbvl"
         }
         ```
+
     c. SendOTP [POST]
         Content-Type : application/json
         Body : 
@@ -43,6 +49,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
             "otp" : 123456
         }
         ```
+
     d. ForgotPassword [POST]
         Content-Type : application/json
         Body : 
@@ -51,5 +58,6 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
             "emailAddress": "iqbvlz@gmail.com"
         }
         ```
+
     e. Dashboard [GET]
         Header : Authorization : Bearer {token}
