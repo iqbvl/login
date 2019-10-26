@@ -2,7 +2,7 @@
 
 - Golang
 - Go-Chi
-- GoChi/jwtauth
+- Go-Chi/jwtauth
 - Docker
 - Docker-compose
 
@@ -17,11 +17,14 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
 2. If you are on linux : 
     sudo docker-compose up --build --detach
 
-3. Use a rest tool or do curl:
+3. Make sure you have dep
+
+4. Use a rest tool or do curl:
     a. Login :
         curl :
-        curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
-        Content-Type : application/json
+                curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
+        
+     Content-Type : application/json
         Body :
         
         {
@@ -30,36 +33,36 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
         }
 
     b. Register [POST]
-        Content-Type : application/json
+        
+      Content-Type : application/json
         Body : 
-    
-        ```
+        
         {
             "emailAddress": "iqbvlz@gmail.com",
             "username" : "iqbvl",
             "password" : "iqbvl"
         }
-        ```
+        
 
     c. SendOTP [POST]
-        Content-Type : application/json
+        
+      Content-Type : application/json
         Body : 
     
-        ```
         {
             "otp" : 123456
         }
-        ```
-
+        
     d. ForgotPassword [POST]
-        Content-Type : application/json
+        
+      Content-Type : application/json
         Body : 
     
-        ```
+        
         {
             "emailAddress": "iqbvlz@gmail.com"
         }
-        ```
+        
 
     e. Dashboard [GET]
         Header : Authorization : Bearer {token}
