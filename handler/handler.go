@@ -29,7 +29,6 @@ const (
 var TokenAuth *jwtauth.JWTAuth
 
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
-	loginResponse := models.LoginResponse{}
 	rsp := models.Response{}
 	w.Header().Set("Content-Type", "application/json")
 
@@ -70,7 +69,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		"claimDate": time.Now().Format(`2006-01-02T15:04:05.000-07:00`),
 		"expire":    helper.ParseDuration("P1Y"),
 	})
-	loginResponse.Token = tokenString
 
 	ctx := context.WithValue(r.Context(), "TokenAuth", TokenAuth)
 	r.WithContext(ctx)
