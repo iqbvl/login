@@ -18,23 +18,16 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     sudo docker-compose up --build --detach
 
 3. Use a rest tool or do curl:
-    a. Login [POST] 
-        curl : 
-
-        ```
+    a. Login :
+        curl :
         curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
-        ```
-
         Content-Type : application/json
         Body :
-         
-
-        ```
+        
         {
             "username" : "iqbvl",
             "password" : "iqbvl"
         }
-        ```
 
     b. Register [POST]
         Content-Type : application/json
