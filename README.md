@@ -1,10 +1,11 @@
-# Boilerplate Iseng
+# Boilerplate
 
 - Golang
 - Go-Chi
 - Go-Chi/jwtauth
 - Docker
 - Docker-compose
+- Dep
 
 # Maintainer
 
@@ -15,17 +16,20 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
 1. Install Docker
 
 2. If you are on linux : 
-    sudo docker-compose up --build --detach
+    sudo docker-compose up --build --detach to deploy
 
-3. Make sure you have dep
+3. Make sure you dep installed before
 
 4. Use a rest tool or do curl:
     a. Login :
-        curl :
-                curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
+        
+      curl :
+                
+        curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
         
      Content-Type : application/json
-        Body :
+        
+     Body :
         
         {
             "username" : "iqbvl",
@@ -35,7 +39,8 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     b. Register [POST]
         
       Content-Type : application/json
-        Body : 
+        
+      Body : 
         
         {
             "emailAddress": "iqbvlz@gmail.com",
@@ -47,7 +52,8 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     c. SendOTP [POST]
         
       Content-Type : application/json
-        Body : 
+      
+      Body : 
     
         {
             "otp" : 123456
@@ -56,7 +62,8 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     d. ForgotPassword [POST]
         
       Content-Type : application/json
-        Body : 
+      
+      Body : 
     
         
         {
@@ -65,4 +72,9 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
         
 
     e. Dashboard [GET]
-        Header : Authorization : Bearer {token}
+      
+      Authorization : Bearer[space]{token_generated_from_login}
+      
+# Happy Coding
+
+Happy coding Everyone
