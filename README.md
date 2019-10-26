@@ -21,13 +21,15 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
     a. Login [POST] 
         curl : 
 
-        ```sh 
+        ```
         curl -d '{"username":"iqbvl", "password":"password"}' -H "Content-Type: application/json" -X POST http://localhost:8080/login 
         ```
-        Content-Type : application/json
-        Body : 
 
-        ```sh
+        Content-Type : application/json
+        Body :
+         
+
+        ```
         {
             "username" : "iqbvl",
             "password" : "iqbvl"
@@ -38,7 +40,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
         Content-Type : application/json
         Body : 
     
-        ```sh
+        ```
         {
             "emailAddress": "iqbvlz@gmail.com",
             "username" : "iqbvl",
@@ -50,7 +52,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
         Content-Type : application/json
         Body : 
     
-        ```sh
+        ```
         {
             "otp" : 123456
         }
@@ -60,7 +62,7 @@ Iqbal Abdurrahman at iqbal.jtk09@gmail.com
         Content-Type : application/json
         Body : 
     
-        ```sh
+        ```
         {
             "emailAddress": "iqbvlz@gmail.com"
         }
