@@ -1,9 +1,13 @@
 package helper
 
 import (
+	"encoding/json"
+	"net/http"
 	"regexp"
 	"strconv"
 	"time"
+
+	"github.com/iqbvl/login/models"
 )
 
 func ParseDuration(str string) time.Duration {
@@ -37,4 +41,26 @@ func ParseInt64(value string) int64 {
 func ValidateEmailFormat(emailAddress string) bool {
 	re := regexp.MustCompile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
 	return re.MatchString(emailAddress)
+}
+
+func UserRequestBodyDecoder(req *http.Request) (*models.User, error) {
+	decoder := json.NewDecoder(req.Body)
+	var t models.User
+	err := decoder.Decode(&t)
+	if err != nil {
+		return nil, err
+	}
+	defer req.Body.Close()
+	return &t, nil
+}
+
+func OTPRequestBodyDecoder(req *http.Request) (*models.OTP, error) {
+	decoder := json.NewDecoder(req.Body)
+	var t models.OTP
+	err := decoder.Decode(&t)
+	if err != nil {
+		return nil, err
+	}
+	defer req.Body.Close()
+	return &t, nil
 }

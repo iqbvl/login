@@ -42,7 +42,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var user *models.User // defaul
-	user, err := middleware.RequestBodyConverter(r)
+	user, err := helper.UserRequestBodyDecoder(r)
 	if err != nil {
 		responses := &models.Response{
 			Data:          "",
@@ -86,7 +86,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	var responses models.Response
 	var user *models.User // defaul
-	user, err := middleware.RequestBodyConverter(r)
+	user, err := helper.UserRequestBodyDecoder(r)
 	if err != nil {
 		responses := &models.Response{
 			Data:          "",
@@ -118,7 +118,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 func ForgotPasswordHandler(w http.ResponseWriter, r *http.Request) {
 	var responses models.Response
 	var user *models.User // defaul
-	user, err := middleware.RequestBodyConverter(r)
+	user, err := helper.UserRequestBodyDecoder(r)
 	if err != nil {
 		responses := &models.Response{
 			Data:          "",
@@ -150,7 +150,7 @@ func ForgotPasswordHandler(w http.ResponseWriter, r *http.Request) {
 func SendOTPHandler(w http.ResponseWriter, r *http.Request) {
 	var responses models.Response
 	var otp *models.OTP // defaul
-	otp, err := middleware.OTPRequestBodyConverter(r)
+	otp, err := helper.OTPRequestBodyDecoder(r)
 	if err != nil {
 		responses := &models.Response{
 			Data:          "",
